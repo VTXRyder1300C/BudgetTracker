@@ -58,7 +58,7 @@ git commit -m "description"
 
 - Push the new feature/feature_name to the forked repo
 ```sh
-git push
+git push --set-upstream origin feature/<feature_name>
 ```
 
 - Go into GIT hub and submit a pull request for it to be applied to the project 
