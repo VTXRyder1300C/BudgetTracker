@@ -10,5 +10,23 @@
     </h:head>
     <body>       
         <h1>Welcome to the Remove Expense Page!</h1>
+        <h:form>
+            <p></p>
+            <h:inputText id="username"
+                         value="#{users.username}"
+                         required="false"
+                         requiredMessage="Please enter something."
+                         maxlength="25" 
+                         style="display:none"/>
+            <h:inputText style="display:none;"
+                         id="USERID"
+                         value="#{users.userID}"
+                         required="true"
+                         requiredMessage="Please enter something."
+                         maxlength="25" />
+            <h:commandButton id="submit" 
+                             value="back" 
+                             action="Mainpage" />
+        </h:form>
     </body>
 </html>

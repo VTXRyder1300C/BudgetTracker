@@ -11,7 +11,64 @@
     <title>Budget Tracker</title>
     <h:head>
     </h:head>
-    <body>          
-        <h1>Index</h1>
+    <body>                
+        <h:messages showSummary="true" 
+                    showDetail="false"
+                    errorStyle="color: #d20005" 
+                    infoStyle="color: blue"/>
+        <h1 id="loginWelcome" style="display:none; color:#00FF00;"> Welcome #{users.username}</h1>
+        <h1>Stay on top of your finances all in one place!</h1>
+
+        <h:form >
+            <div id ="loginOptions" style ="display: block;">
+                <h:commandButton role="button" 
+                                 id="login" 
+                                 value="Login"
+                                 style="display: inline-block"
+                                 action="login" />
+            </div>
+            <div id ="afterLogin" style ="display: none;">
+                <h:form style="display: inline-block">
+                    <h:inputText id="username"
+                                 style="display:none;"
+                                 value="#{users.username}"
+                                 maxlength="25" />
+                    <h:inputText id="userID"
+                                 value="#{users.userID}"
+                                 style="display:none;"
+                                 maxlength="25" />
+                    <p></p>
+                    <h:commandButton 
+                        id="submit" 
+                        value="Lets start budgeting!" 
+                        action="Mainpage" />
+                </h:form>
+                <h:form style="display: inline-block">
+                    <h:commandButton id="reset" value="Logout" action="index"/>
+                </h:form>
+            </div>
+        </h:form>
+        <h1 id="failed" style="display:none; color:red;">Error! Incorrect information entered</h1>
+        <script>
+            if (#{users.userID} !== 0) {
+                var user = #{users.userID};
+                console.log("Inside If " + user);
+            }
+            console.log("Outside IF " + user);
+            if (#{users.userID} === 0) {
+                if (#{users.loginAttempted}) {
+                    document.getElementById("failed").style.display = "block";
+                }
+            } else {
+                document.getElementById("failed").style.display = "none";
+            }
+            if (#{users.userID} === 0) {//check if user is logged on and hide button if they are logged in
+                document.getElementById("loginWelcome").style.display = "none";
+            }
+            if (#{users.userID} !== 0) {//check if user is logged on and hide button if they are
+                document.getElementById("loginOptions").style.display = "none";
+                document.getElementById("afterLogin").style.display = "block";//Hide the login options
+                alert("Welcome " + "#{users.username}" + "!");//welcome message instead of logon button
+            }</script>
     </body>
 </html>
