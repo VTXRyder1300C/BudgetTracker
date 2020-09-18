@@ -10,6 +10,48 @@
         <title>Main Page</title>
     </h:head>
     <h:body>
-        <h1>Welcome to the Main page!</h1>
+        <h1>Hi #{users.username}!</h1>
+        <h:form>
+            <h:commandButton id="logOut" value="Logout" 
+                             action="index" />
+        </h:form>
+        <h4><b>Your tools to manage your money</b></h4>
+        <h:form>
+            <h:selectOneMenu value="#{users.table}" style="display: none">
+                <f:selectItem itemValue="income" itemLabel="Display income"/>
+            </h:selectOneMenu><br/>Manage your income here:<br/>
+            <h:commandButton id="income2" value="View all your income" 
+                             action="income" />
+            <h:commandButton  id="insertIncome" value="Add income" 
+                              action="insertIncome" />
+            <h:commandButton  id="removeIncome" value="Remove income" 
+                              action="removeIncome" />
+            <h:commandButton id="SearchIncome" value="Search income" 
+                             action="searchIncome" />
+        </h:form>
+        <h:form>
+            <!--Expenses-->
+            <!-- Input texts are needed to pass variables to pages-->
+            <h:inputText id="username"
+                         style="display:none;"
+                         value="#{users.username}"
+                         maxlength="25" />
+            <h:inputText id="userID"
+                         value="#{users.userID}"
+                         style="display:none;"
+                         maxlength="25" />
+            <p></p>
+            <h:selectOneMenu value="#{users.table}" style="display: none">
+                <f:selectItem itemValue="expense" itemLabel="Display expenses"/>
+            </h:selectOneMenu> <br/>Manage your expenses here:<br/>
+            <h:commandButton id="expenses" value="View all your expenses" 
+                             action="expenses" />
+            <h:commandButton id="insertExpense" value="Add expenses" 
+                             action="insertExpense" />
+            <h:commandButton id="removeExpense" value="Remove expenses" 
+                             action="removeExpense" />
+            <h:commandButton id="SearchExpense" value="Search expenses" 
+                             action="searchExpense" />
+        </h:form>
     </h:body>
 </html>
