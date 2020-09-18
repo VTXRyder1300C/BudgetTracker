@@ -1,7 +1,8 @@
 # History of edits:
 - Initial template uploaded 9/18/2020
 - Added all pages uploaded 9/18/2020
-
+- Added navigation to all pages
+- Added a simple login via a database query
 
 # Requirements:
 
