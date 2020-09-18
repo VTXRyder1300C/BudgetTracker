@@ -78,7 +78,7 @@ git push --set-upstream origin feature/<feature_name>
 
 3- Click on jdbc:derby://localhost.../contact [nbuser]
 
-4- Username and password should be nnuser (default)
+4- Username and password should be nbuser (default)
 
 5- Run SQL commands 
 
