@@ -1,4 +1,6 @@
 History of edits:
+- Initial template uploaded 9/18/2020
+- Added all pages uploaded 9/18/2020
 
 
 # Requirements:
