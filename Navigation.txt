@@ -1,0 +1,3 @@
+Index: http://localhost:8080/ExpenseTracker/faces/index.xhtml
+Mainpage: http://localhost:8080/ExpenseTracker/faces/Mainpage.xhtml
+Other pages: Just use http://localhost:8080/ExpenseTracker/faces/<page name>.xhtml
